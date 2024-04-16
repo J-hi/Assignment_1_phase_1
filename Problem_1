@@ -15,33 +15,29 @@ Constraints :
 
 """
 
-def int_input(ilist,xstring):
-    sep=[' ',',',';']
-    y=len(xstring)
-    i=0
-    while i<y:
-        s=''
-        sign=''
-        while (i<=(y-1) and xstring[i] not in sep):  
-            if xstring[i]=='+' or xstring[i]=='-':
-                sign=xstring[i]
-                i+=1
-            s=s+xstring[i]
-            i+=1
-   
-        if s!='':
-            if sign=='-':
-                ilist.append(-int(s))
-            else:
-                ilist.append(int(s))
-        i+=1
-    return ilist
-
-
 li=[]
 M=int(input())
 x=input()
-int_input(li,x)
+sep=[' ',',',';']
+y=len(x)
+i=0
+while i<y:
+    s=''
+    sign=''
+    while (i<y and x[i] not in sep):  
+        if x[i]=='+' or x[i]=='-':
+            sign=x[i]
+            i+=1
+        s=s+x[i]
+        i+=1
+   
+    if s!='':
+        if sign=='-':
+            li.append(-int(s))
+        else:
+            li.append(int(s))
+    i+=1
+   
 add=0
 for i in range(0,M):
     add=add+li[i]
