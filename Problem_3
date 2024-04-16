@@ -17,30 +17,29 @@ Welcome
 
 
 """
-def str_input(slist, xstring):
-    sep=[' ',',',';']
-    y=len(xstring)
-    i=0
-    while i<y:
-        s=''
-        while i<y and xstring[i] not in sep:
-            s=s+xstring[i]
-            i+=1
-        if s!='':
-            slist.append(s)
-        i+=1
-    return slist
-    
-def reflection(slist,nsubstr):
-    for i in range(0,nsubstr):
-        print(slist[nsubstr-i-1])
+ 
+def reflection(slist):
+    for i in slist[::-1]:
+        print(i)
     return
-
 
 
 li=[]
 M=input()
-m=int(M)
 x=input()
-str_input(li,x)
-reflection(li,m)
+
+sep=[' ',',',';']
+y=len(x)
+i=0
+while i<y:
+    s=''
+    while i<y and x[i] not in sep:
+        s=s+x[i]
+        i+=1
+    if s!='':
+        li.append(s)
+    i+=1
+
+reflection(li)
+
+
