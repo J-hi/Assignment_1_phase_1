@@ -1,0 +1,59 @@
+""" 
+
+Problem: Knock Knock are you there?
+
+Input Format:
+
+1. Take M int input from the User 
+2. Get M , seperated values from a user 
+3. Enter a number 'N' you are looking for
+
+Output Format:
+
+1. Print index on console once Found or Print 'Better Luck Next Time' to the console
+
+
+"""
+
+def int_input(ilist,xstring):
+    sep=[' ',',',';']
+    y=len(xstring)
+    i=0
+    while i<y:
+        s=''
+        sign=''
+        while (i<=(y-1) and xstring[i] not in sep):  
+            if xstring[i]=='+' or xstring[i]=='-':
+                sign=xstring[i]
+                i+=1
+            s=s+xstring[i]
+            i+=1
+   
+        if s!='':
+            if sign=='-':
+                ilist.append(-int(s))
+            else:
+                ilist.append(int(s))
+        i+=1
+    return ilist
+
+
+M=int(input())
+x=input()
+li=[]
+int_input(li,x)
+
+
+
+N=int(input())
+found=0
+j=0
+for i in range(0,M):
+    if N==li[i]:
+        found=1
+        j=i
+        
+if found==1:
+    print(j)
+else:
+    print("Better Luck Next Time")
