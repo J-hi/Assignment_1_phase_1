@@ -27,21 +27,6 @@ Sample Output 2:
 1 1 1 2 2 
 
 """
-def int_input12(ilist,xstring):
-    y=len(xstring)
-    i=0
-    while i<y:
-        s=''
-        sign=''
-        while (i<=(y-1) and xstring[i]!=' '):  
-            s=s+xstring[i]
-            i+=1
-   
-        if s!='':
-            ilist.append(int(s))
-        i+=1
-    return ilist
-
 def arrange(ilist,iM):
     alist=ilist.copy()
     e=0
@@ -66,7 +51,19 @@ for e in range(0,m):
     Mlen.append(M)
     x=input()
     li=[]
-    mlist.append(int_input12(li,x))
+    y=len(x)
+    i=0
+    while i<y:
+        s=''
+        sign=''
+        while (i<y and x[i]!=' '):  
+            s=s+x[i]
+            i+=1
+   
+        if s!='':
+            li.append(int(s))
+        i+=1
+    mlist.append(li)
 
 sortedlist=[]
 for e in range(0,m):
@@ -76,3 +73,5 @@ for e in range(0,m):
             print(sortedlist[f])
         else:
             print(sortedlist[f],end=' ')
+
+
