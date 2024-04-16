@@ -37,14 +37,15 @@ Output Format:
 def turnaround(ilist,length):
     mid=4
     turnlist=[]
-    i=mid
+    for i in range(mid,length):
+        turnlist.append(ilist[i])
+        
+    i=length%mid
     while i<length:
-        if(len(turnlist)==length):
+        if len(turnlist)==length:
             break
         turnlist.append(ilist[i])
         i+=1
-        if i==length:
-            i=length%mid               
         if i==mid:
             i=0
 
@@ -56,5 +57,6 @@ li=[]
 for i in range(0,M):
     li.append(int(input()))
 turn=turnaround(li,M)
-for i in range(0,M):
-    print(turn[i])
+for i in turn:
+    print(i)
+
